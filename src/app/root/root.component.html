@@ -1,3 +1,75 @@
-<p>
-  root works!
-</p>
+<div class="row">
+  <div class="col s8">
+    <!-- <img style="margin-top:10%" height="100%" width="100%" src="../../assets/blitzlogo.png"> -->
+    <h6 class="col s6 offset-s3 indigo-text text-lighten-1">A place to remedy the worms in your brain</h6>
+  </div>
+  <div class="col s4" style="margin-top:12%">
+    <nav class="nav-extended col s11 cyan darken-4">
+      <div class="nav-content center">
+        <ul class="tabs tabs-transparent">
+          <li class="tab col s6"><a [ngClass]="sign?'active':''" (click)="signTrue()">SIGN IN</a></li>
+          <li class="tab col s6"><a [ngClass]="!sign?'active':''" (click)="signFalse()">SIGN UP</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div *ngIf="sign">
+      <div class="input-field col s10">
+        <i class="material-icons prefix">person</i>
+        <input type="text" class="validate" [(ngModel)]="signin.username" />
+        <label>Username</label>
+      </div>
+      <div class="input-field col s10">
+        <i class="material-icons prefix">vpn_key</i>
+        <input type="{{showPassword?'text':'password'}}" class="validate" [(ngModel)]="signin.password" name="pw"
+          #pw="ngModel" minlength="8" />
+        <label>Password</label>
+        <span class="helper-text red-text" *ngIf="pw.invalid && (pw.dirty || pw.touched)">Password is atleast 8
+          characters long</span>
+      </div>
+      <div class="col s1" style="margin-top:6%;" (click)="toggleShowPassword()"><i class="material-icons"
+          [innerHTML]="showPassword?'visibility':'visibility_off'"></i></div>
+      <button [disabled]="signin.username==null || (signin.password==null?true:(signin.password.length<8?true:false))"
+        class="col s3 offset-s3 btn waves-effect waves-light cyan darken-4" (click)="signIn()">Sign In</button>
+    </div>
+    <div *ngIf="!sign">
+      <div class="input-field col s10">
+        <input type="text" class="validate" (blur)="validateUsername()" [(ngModel)]="signup.username" name="username"
+          #username="ngModel" />
+        <label>Username</label>
+        <span class="helper-text red-text"
+          *ngIf="(signup.username==null?true:(signup.username.length==0)) && username.touched">
+          Username cannot be empty</span>
+        <span class="helper-text red-text" *ngIf="usernameValidShow && !usernameValid">username is not available</span>
+      </div>
+      <span class="col s2" *ngIf="showLoader" style="margin-top:6%">
+        <mat-progress-spinner diameter=20 mode="indeterminate" color="warn">
+        </mat-progress-spinner>
+      </span>
+      <span *ngIf="usernameValidShow" class="col s2" style="margin-top:6%">
+        <span *ngIf="!showLoader"><i class="material-icons"
+            [ngClass]="usernameValid?'green-text text-darken-4':'red-text text-darken-4'"
+            [innerHTML]="usernameValid?'check_circle':'error'"></i></span>
+      </span>
+      <div class="input-field col s10">
+        <input type="email" class="validate" name="emailid" #emailid="ngModel" [(ngModel)]="signup.email" email />
+        <label>Email ID</label>
+        <span class="helper-text red-text" *ngIf="emailid.invalid && (emailid.dirty || emailid.touched)">Not a valid
+          Email Id</span>
+      </div>
+      <div class="input-field col s10">
+        <label>Password</label>
+        <input type="{{showPassword?'text':'password'}}" class="validate" [(ngModel)]="signup.password" name="pw"
+          #pw="ngModel" minlength="8" />
+        <span class="helper-text red-text" *ngIf="pw.invalid && (pw.dirty || pw.touched)">Password must be atleast 8
+          characters long</span>
+      </div>
+      <button
+        [disabled]="signup.email==null || (signup.password==null?true:(signup.password.length<8?true:false)) || !usernameValid"
+        class="col s4 offset-s3 btn waves-effect waves-light cyan darken-4" (click)="signUp()">Sign Up</button>
+      <div *ngIf="showError" class="col s10 center helper-text red-text text-darken-4 red lighten-3"
+        [innerHTML]="errortext"></div>
+      <div *ngIf="showSuccess" class="col s10 center helper-text green text text-darken-4 green lighten-3"
+        [innerHTML]="successtext">
+      </div>
+    </div>
+  </div>
