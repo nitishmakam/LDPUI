@@ -79,9 +79,7 @@ export class RootComponent implements OnInit {
       .subscribe(
         x => {
           localStorage.setItem('username', this.signin.username);
-          // console.log(x);
           localStorage.setItem('token', x['token']);
-          console.log(x['token']);
           // localStorage.setItem('email', x['email']);
           this.router.navigate(['/home']);
         },

@@ -13,6 +13,6 @@ export class HomeService {
     });
   }
   try() {
-    return this.http.get(endpoint.concat('/predictions/', { headers: this.headers }));
+    return this.http.get(endpoint.concat('/prediction/'), { headers: this.headers });
   }
 }
