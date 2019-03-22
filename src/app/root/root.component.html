@@ -30,6 +30,11 @@
           [innerHTML]="showPassword?'visibility':'visibility_off'"></i></div>
       <button [disabled]="signin.username==null || (signin.password==null?true:(signin.password.length<8?true:false))"
         class="col s3 offset-s3 btn waves-effect waves-light cyan darken-4" (click)="signIn()">Sign In</button>
+      <div *ngIf="showError" class="col s10 center helper-text red-text text-darken-4 red lighten-3"
+        [innerHTML]="errortext"></div>
+      <div *ngIf="showSuccess" class="col s10 center helper-text green text text-darken-4 green lighten-3"
+        [innerHTML]="successtext">
+      </div>
     </div>
     <div *ngIf="!sign">
       <div class="input-field col s10">
@@ -39,7 +44,8 @@
         <span class="helper-text red-text"
           *ngIf="(signup.username==null?true:(signup.username.length==0)) && username.touched">
           Username cannot be empty</span>
-        <span class="helper-text red-text" *ngIf="usernameValidShow && !usernameValid">username is not available</span>
+        <span class="helper-text red-text" *ngIf="usernameValidShow && !usernameValid">username is not
+          available</span>
       </div>
       <span class="col s2" *ngIf="showLoader" style="margin-top:6%">
         <mat-progress-spinner diameter=20 mode="indeterminate" color="warn">
