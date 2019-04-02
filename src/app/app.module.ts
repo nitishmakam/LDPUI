@@ -9,13 +9,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { RootComponent } from './root/root.component';
 import { HomeComponent } from './home/home.component';
-import { MatProgressSpinnerModule } from '@angular/material';
+import { MatProgressSpinnerModule, MatSidenavModule, MatDialogModule, MatExpansionModule, MatIconModule } from '@angular/material';
+import { SnackbarComponent } from './snackbar/snackbar.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RootComponent,
-    HomeComponent
+    HomeComponent,
+    SnackbarComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -23,9 +27,16 @@ import { MatProgressSpinnerModule } from '@angular/material';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatSidenavModule,
+    MatDialogModule,
+    MatExpansionModule,
+    MatIconModule
   ],
   providers: [],
+  entryComponents: [
+    SnackbarComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
