@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PredictionService } from '../prediction.service';
 
 export interface Details {
   name: string;
@@ -53,11 +54,20 @@ export interface Details {
 export class PredictionComponent implements OnInit {
 
   private details: Details;
-  constructor() {
+  constructor(private predService: PredictionService) {
     this.details = <Details>{};
   }
 
   ngOnInit() {
   }
 
+  generate() {
+    console.log(this.details);
+    this.predService.generate(this.details).subscribe(x => {
+      console.log(x);
+    },
+      err => {
+        console.log(err);
+      });
+  }
 }
