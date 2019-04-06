@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { MatProgressSpinnerModule, MatSidenavModule, MatDialogModule, MatExpansionModule, MatIconModule } from '@angular/material';
 import { SnackbarComponent } from './snackbar/snackbar.component';
 import { ProfileComponent } from './profile/profile.component';
+import { PredictionComponent } from './prediction/prediction.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ProfileComponent } from './profile/profile.component';
     RootComponent,
     HomeComponent,
     SnackbarComponent,
-    ProfileComponent
+    ProfileComponent,
+    PredictionComponent
   ],
   imports: [
     BrowserModule,

@@ -2,26 +2,24 @@
   <mat-drawer-content>
     <nav>
       <div class="nav-wrapper teal">
-        <a style="height:100%;width:10%" class="brand-logo center"><img style="height:100%;width:100%" src="../assets/LDePLogo.png" /></a>
+        <a style="height:100%;width:10%" class="brand-logo center"><img style="height:100%;width:100%"
+            src="../assets/LDePLogo.png" /></a>
         <ul class="left">
           <li>
             <a class="left" (click)="snav.toggle()"><i class="material-icons">menu</i></a>
           </li>
         </ul>
         <ul class="right">
-          <li (click)="openDialog()"><a><i class="material-icons white-text" matTooltip="Ask a question">add_circle_outline</i></a></li>
+          <li (click)="openDialog()"><a><i class="material-icons white-text"
+                matTooltip="Ask a question">add_circle_outline</i></a></li>
         </ul>
       </div>
     </nav>
-    <!-- <div class="container">
-      <h3>Feed</h3>
-      <div class="row">
-        <mat-accordion class="example-headers-align">
-          <app-question *ngFor="let question of questions" [question]="question"></app-question>
-        </mat-accordion>
-        {{questions[0].answers[0].created|date:'d/m/yy hh:mm'}}
-      </div>
-    </div> -->
+    <div class="container">
+      <h4>Generate a Prediction</h4>
+      <app-prediction></app-prediction>
+      <!-- <button class="btn small" (click)="test()">test</button> -->
+    </div>
   </mat-drawer-content>
 
   <mat-drawer class="sidenav" #snav mode="over">
