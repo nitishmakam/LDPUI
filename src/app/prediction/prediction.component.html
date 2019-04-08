@@ -2,178 +2,224 @@
   <div class="card col s10">
     <div class="row">
       <div class="input-field col s6">
-        <label>Name</label>
+        <label matTooltip="Name to identify your prediction">Name</label>
         <input type="text" [(ngModel)]="details.name" />
       </div>
     </div>
-    <div class="input-field col s4">
-      <label>EXTERNAL SOURCE 1</label>
-      <input type="number" [(ngModel)]="details.EXT_SOURCE_1" />
+    <div class="row">
+      <div class="input-field col s4">
+        <label matTooltip="Normalized score from external data source">EXTERNAL SOURCE 1</label>
+        <input type="number" [(ngModel)]="details.EXT_SOURCE_1" />
+      </div>
+      <div class="input-field col s4">
+        <label matTooltip="Normalized score from externald data source">EXTERNAL SOURCE 2</label>
+        <input type="number" [(ngModel)]="details.EXT_SOURCE_2" />
+      </div>
+      <div class="input-field col s4">
+        <label matTooltip="Normalized score from externald data source">EXTERNAL SOURCE 3</label>
+        <input type="number" [(ngModel)]="details.EXT_SOURCE_3" />
+      </div>
+      <div class="input-field col s4">
+        <label>AGE IN DAYS</label>
+        <input type="number" [(ngModel)]="details.DAYS_BIRTH" />
+      </div>
+      <div class="input-field col s4">
+        <label>DAYS IN EMPLOYMENT</label>
+        <input type="number" [(ngModel)]="details.DAYS_EMPLOYED" />
+      </div>
+      <div class="input-field col s4">
+        <label matTooltip="Loan Annuity">ANNUITY</label>
+        <input type="number" [(ngModel)]="details.AMT_ANNUITY" />
+      </div>
+      <div class="input-field col s4">
+        <label matTooltip="Credit amount of the loan">CREDIT</label>
+        <input type="number" [(ngModel)]="details.AMT_CREDIT" />
+      </div>
+      <div class="input-field col s4">
+        <label matTooltip="Price of goods for which the loan was given">GOODS PRICE</label>
+        <input type="number" [(ngModel)]="details.AMT_GOODS_PRICE" />
+      </div>
+      <div class="input-field col s4">
+        <label
+          matTooltip="How many days before the application did client change the identity document with which he applied for the loan">DAYS
+          PUBLISHED</label>
+        <input type="number" [(ngModel)]="details.DAYS_ID_PUBLISH" />
+      </div>
+      <div class="input-field col s4">
+        <label matTooltip="How many days before the application did client change his registration">DAYS
+          REGISTRATION</label>
+        <input type="number" [(ngModel)]="details.DAYS_REGISTRATION" />
+      </div>
+      <div class="input-field col s4">
+        <label matTooltip="How many days before application did client change phone">DAYS SINCE LAST PHONE
+          CHANGE</label>
+        <input type="number" [(ngModel)]="details.DAYS_LAST_PHONE_CHANGE" />
+      </div>
+      <div class="input-field col s4">
+        <label matTooltip="Income of the client">TOTAL INCOME</label>
+        <input type="number" [(ngModel)]="details.AMT_INCOME_TOTAL" />
+      </div>
+      <div class="input-field col s4">
+        <label matTooltip="Age of client's car">AGE OF CAR</label>
+        <input type="number" [(ngModel)]="details.OWN_CAR_AGE" />
+      </div>
+      <div class="input-field col s4">
+        <label matTooltip="Normalized population of region where client lives">POPULATION DENSITY</label>
+        <input type="number" [(ngModel)]="details.REGION_POPULATION_RELATIVE" />
+      </div>
+      <div class="input-field col s4">
+        <label matTooltip="Approximately at what hour did the client apply for the loan">HOUR</label>
+        <input type="number" [(ngModel)]="details.HOUR_APPR_PROCESS_START" />
+      </div>
+      <div class="input-field col s4">
+        <label
+          matTooltip="Number of enquiries to Credit Bureau about the client one day year (excluding last 3 months before application)">QUERIES
+          LAST YEAR</label>
+        <input type="number" [(ngModel)]="details.AMT_REQ_CREDIT_BUREAU_YEAR" />
+      </div>
+      <div class="input-field col s4">
+        <label
+          matTooltip="Number of enquiries to Credit Bureau about the client 3 month before application (excluding one month before application)">QUERIES
+          LAST QUARTER</label>
+        <input type="number" [(ngModel)]="details.AMT_REQ_CREDIT_BUREAU_QRT" />
+      </div>
+      <div class="input-field col s4">
+        <label matTooltip="How many observation of client's social surroundings defaulted on 30 DPD (days past due)">30
+          COUNT SOCIAL CIRCLE</label>
+        <input type="number" [(ngModel)]="details.DEF_30_CNT_SOCIAL_CIRCLE" />
+      </div>
+      <div class="input-field col s4">
+        <label
+          matTooltip="Mode of the Normalized information about building where the client lives. Apartment size, common area, living area, age of building, number of elevators, number of entrances, state of the building, number of floor">YEARS
+          BEGIN EXPLUATATION MODE</label>
+        <input type="number" [(ngModel)]="details.YEARS_BEGINEXPLUATATION_MODE" />
+      </div>
+      <div class="input-field col s4">
+        <label matTooltip="Mode of the total area of the client's living area">TOTAL AREA MODE</label>
+        <input type="number" [(ngModel)]="details.TOTALAREA_MODE" />
+      </div>
+      <div class="input-field col s4">
+        <label
+          matTooltip="How many observation of client's social surroundings with observable 60 DPD (days past due) default">60
+          SOCIAL CIRCLE</label>
+        <input type="number" [(ngModel)]="details.OBS_60_CNT_SOCIAL_CIRCLE" />
+      </div>
+      <div class="input-field col s4">
+        <label
+          matToltip="How many observation of client's social surroundings with observable 30 DPD (days past due) default">30
+          SOCIAL CIRCLE</label>
+        <input type="number" [(ngModel)]="details.OBS_30_CNT_SOCIAL_CIRCLE" />
+      </div>
+      <div class="input-field col s4">
+        <label matTooltip="Mode of the basement area of the client's living area">BASEMENT AREA MODE</label>
+        <input type="number" [(ngModel)]="details.BASEMENTAREA_MODE" />
+      </div>
+      <div class="input-field col s4">
+        <label matTooltip="Contract Product Type">CONTRACT TYPE</label>
+        <input type="number" [(ngModel)]="details.NAME_CONTRACT_TYPE" />
+      </div>
+      <div class="input-field col s4">
+        <label matTooltip="Our rating of the region where client lives with taking city into account (1,2,3)">REGION
+          RATING</label>
+        <input type="number" [(ngModel)]="details.REGION_RATING_CLIENT_W_CITY" />
+      </div>
+      <div class="input-field col s4">
+        <label matTooltip="Mode of the normalized information of the client's living area">APARTMENTS MODE</label>
+        <input type="number" [(ngModel)]="details.APARTMENTS_MODE" />
+      </div>
+      <div class="input-field col s4">
+        <label matTooltip="Average of the normalized information of the client's land area">LAND AREA AVERAGE</label>
+        <input type="number" [(ngModel)]="details.LANDAREA_AVG" />
+      </div>
+      <div class="input-field col s4">
+        <label matTooltip="Average of the normalized information of the client's basement area">BASEMENT AREA
+          AVERAGE</label>
+        <input type="number" [(ngModel)]="details.BASEMENTAREA_AVG" />
+      </div>
+      <div class="input-field col s4">
+        <label matTooltip="How many observation of client's social surroundings defaulted on 60 (days past due) DPD">DEF
+          60 CNT SOCIAL CIRCLE</label>
+        <input type="number" [(ngModel)]="details.DEF_60_CNT_SOCIAL_CIRCLE" />
+      </div>
+      <div class="col s6" style="margin-top: 10px;">
+        <label>Gender</label>
+        <label><input name="gender" type="radio" value="male" [(ngModel)]="details.CODE_GENDER" />
+          <span>Male</span>
+        </label>
+        <label><input name="gender" type="radio" value="female" [(ngModel)]="details.CODE_GENDER" />
+          <span>Female</span>
+        </label>
+      </div>
+      <div class="input-field col s4">
+        <label matTooltip="Mode of the normalized information of the client's land area">LAND AREA MODE</label>
+        <input type="number" [(ngModel)]="details.LANDAREA_MODE" />
+      </div>
+      <div class="input-field col s4">
+        <label
+          matTooltip="Number of enquiries to Credit Bureau about the client one month before application (excluding one week before application)">QUERIES
+          LAST MONTH</label>
+        <input type="number" [(ngModel)]="details.AMT_REQ_CREDIT_BUREAU_MON" />
+      </div>
+      <div class="input-field col s4">
+        <label
+          matTooltip="Normalized information about building where the client lives, What is average (_AVG suffix), modus (_MODE suffix), median (_MEDI suffix) apartment size, common area, living area, age of building, number of elevators, number of entrances, state of the building, number of floor">YEARS
+          BEGIN EXPLUATATION MEDIAN</label>
+        <input type="number" [(ngModel)]="details.YEARS_BEGINEXPLUATATION_MEDI" />
+      </div>
+      <div class="col s6" style="margin-top: 10px;">
+        <label>Contact address same as permanent address?</label>
+        <label><input name="gender" type="radio" value=true [(ngModel)]="details.REG_CITY_NOT_LIVE_CITY" />
+          <span>True</span>
+        </label>
+        <label><input name="gender" type="radio" value=false [(ngModel)]="details.REG_CITY_NOT_LIVE_CITY" />
+          <span>False</span>
+        </label>
+      </div>
+      <div class="input-field col s4">
+        <label
+          matTooltip="Normalized information about building where the client lives, What is average (_AVG suffix), modus (_MODE suffix), median (_MEDI suffix) apartment size, common area, living area, age of building, number of elevators, number of entrances, state of the building, number of floor">NON
+          LIVING AREA MEDIAN</label>
+        <input type="number" [(ngModel)]="details.NONLIVINGAREA_MEDI" />
+      </div>
+      <div class="input-field col s4">
+        <label
+          matTooltip="Normalized information about building where the client lives, What is average (_AVG suffix), modus (_MODE suffix), median (_MEDI suffix) apartment size, common area, living area, age of building, number of elevators, number of entrances, state of the building, number of floor">LAND
+          AREA MEDIAN</label>
+        <input type="number" [(ngModel)]="details.LANDAREA_MEDI" />
+      </div>
+      <div class="input-field col s4">
+        <label
+          matTooltip="Normalized information about building where the client lives, What is average (_AVG suffix), modus (_MODE suffix), median (_MEDI suffix) apartment size, common area, living area, age of building, number of elevators, number of entrances, state of the building, number of floor">BASEMENT
+          AREA MEDIAN</label>
+        <input type="number" [(ngModel)]="details.BASEMENTAREA_MEDI" />
+      </div>
+      <div class="input-field col s4">
+        <label
+          matTooltip="Normalized information about building where the client lives, What is average (_AVG suffix), modus (_MODE suffix), median (_MEDI suffix) apartment size, common area, living area, age of building, number of elevators, number of entrances, state of the building, number of floor">COMMON
+          AREA MEDIAN</label>
+        <input type="number" [(ngModel)]="details.COMMONAREA_MEDI" />
+      </div>
+      <div class="input-field col s4">
+        <label
+          matTooltip="Normalized information about building where the client lives, What is average (_AVG suffix), modus (_MODE suffix), median (_MEDI suffix) apartment size, common area, living area, age of building, number of elevators, number of entrances, state of the building, number of floor">YEARS
+          BEGIN AVG</label>
+        <input type="number" [(ngModel)]="details.YEARS_BEGINEXPLUATATION_AVG" />
+      </div>
+      <div class="input-field col s4">
+        <label matTooltip="What kind of occupation does the client have">OCCUPATION TYPE</label>
+        <input type="number" [(ngModel)]="details.OCCUPATION_TYPE" />
+      </div>
+      <div class="input-field col s4">
+        <label
+          matTooltip="Normalized information about building where the client lives, What is average (_AVG suffix), modus (_MODE suffix), median (_MEDI suffix) apartment size, common area, living area, age of building, number of elevators, number of entrances, state of the building, number of floor">LIVING
+          AREA MEDIAN</label>
+        <input type="number" [(ngModel)]="details.LIVINGAREA_MEDI" />
+      </div>
+      <div class="input-field col s4">
+        <label matTooltip="How many family members does client have">NO OF FAMILY MEMBERS</label>
+        <input type="number" [(ngModel)]="details.CNT_FAM_MEMBERS" />
+      </div>
     </div>
-    <div class="input-field col s4">
-      <label>EXTERNAL SOURCE 2</label>
-      <input type="number" [(ngModel)]="details.EXT_SOURCE_2" />
-    </div>
-    <div class="input-field col s4">
-      <label>EXTERNAL SOURCE 3</label>
-      <input type="number" [(ngModel)]="details.EXT_SOURCE_3" />
-    </div>
-    <div class="input-field col s4">
-      <label>AGE IN DAYS</label>
-      <input type="number" [(ngModel)]="details.DAYS_BIRTH" />
-    </div>
-    <div class="input-field col s4">
-      <label>DAYS IN EMPLOYMENT</label>
-      <input type="number" [(ngModel)]="details.DAYS_EMPLOYED" />
-    </div>
-    <div class="input-field col s4">
-      <label>ANNUITY</label>
-      <input type="number" [(ngModel)]="details.AMT_ANNUITY" />
-    </div>
-    <div class="input-field col s4">
-      <label>CREDIT</label>
-      <input type="number" [(ngModel)]="details.AMT_CREDIT" />
-    </div>
-    <div class="input-field col s4">
-      <label>GOODS PRICE</label>
-      <input type="number" [(ngModel)]="details.AMT_GOODS_PRICE" />
-    </div>
-    <div class="input-field col s4">
-      <label>DAYS PUBLISHED</label>
-      <input type="number" [(ngModel)]="details.DAYS_ID_PUBLISH" />
-    </div>
-    <div class="input-field col s4">
-      <label>DAYS REGISTRATION</label>
-      <input type="number" [(ngModel)]="details.DAYS_REGISTRATION" />
-    </div>
-    <div class="input-field col s4">
-      <label>DAYS SINCE LAST PHONE CHANGE</label>
-      <input type="number" [(ngModel)]="details.DAYS_LAST_PHONE_CHANGE" />
-    </div>
-    <div class="input-field col s4">
-      <label>TOTAL INCOME</label>
-      <input type="number" [(ngModel)]="details.AMT_INCOME_TOTAL" />
-    </div>
-    <div class="input-field col s4">
-      <label>AGE OF CAR</label>
-      <input type="number" [(ngModel)]="details.OWN_CAR_AGE" />
-    </div>
-    <div class="input-field col s4">
-      <label>POPULATION DENSITY</label>
-      <input type="number" [(ngModel)]="details.REGION_POPULATION_RELATIVE" />
-    </div>
-    <div class="input-field col s4">
-      <label>HOUR</label>
-      <input type="number" [(ngModel)]="details.HOUR_APPR_PROCESS_START" />
-    </div>
-    <div class="input-field col s4">
-      <label>QUERIES LAST YEAR</label>
-      <input type="number" [(ngModel)]="details.AMT_REQ_CREDIT_BUREAU_YEAR" />
-    </div>
-    <div class="input-field col s4">
-      <label>QUERIES LAST QUARTER</label>
-      <input type="number" [(ngModel)]="details.AMT_REQ_CREDIT_BUREAU_QRT" />
-    </div>
-    <div class="input-field col s4">
-      <label>30 COUNT SOCIAL CIRCLE</label>
-      <input type="number" [(ngModel)]="details.DEF_30_CNT_SOCIAL_CIRCLE" />
-    </div>
-    <div class="input-field col s4">
-      <label>YEARS BEGIN EXPLUATATION</label>
-      <input type="number" [(ngModel)]="details.YEARS_BEGINEXPLUATATION_MODE" />
-    </div>
-    <div class="input-field col s4">
-      <label>TOTAL AREA MODE</label>
-      <input type="number" [(ngModel)]="details.TOTALAREA_MODE" />
-    </div>
-    <div class="input-field col s4">
-      <label>60 SOCIAL CIRCLE</label>
-      <input type="number" [(ngModel)]="details.OBS_60_CNT_SOCIAL_CIRCLE" />
-    </div>
-    <div class="input-field col s4">
-      <label>30 SOCIAL CIRCLE</label>
-      <input type="number" [(ngModel)]="details.OBS_30_CNT_SOCIAL_CIRCLE" />
-    </div>
-    <div class="input-field col s4">
-      <label>BASEMENT AREA MODE</label>
-      <input type="number" [(ngModel)]="details.BASEMENTAREA_MODE" />
-    </div>
-    <div class="input-field col s4">
-      <label>CONTRACT TYPE</label>
-      <input type="number" [(ngModel)]="details.NAME_CONTRACT_TYPE" />
-    </div>
-    <div class="input-field col s4">
-      <label>REGION RATING</label>
-      <input type="number" [(ngModel)]="details.REGION_RATING_CLIENT_W_CITY" />
-    </div>
-    <div class="input-field col s4">
-      <label>APARTMENTS MODE</label>
-      <input type="number" [(ngModel)]="details.APARTMENTS_MODE" />
-    </div>
-    <div class="input-field col s4">
-      <label>LAND AREA</label>
-      <input type="number" [(ngModel)]="details.LANDAREA_AVG" />
-    </div>
-    <div class="input-field col s4">
-      <label>BASEMENT AREA</label>
-      <input type="number" [(ngModel)]="details.BASEMENTAREA_AVG" />
-    </div>
-    <div class="input-field col s4">
-      <label>DEF 60 CNT SOCIAL CIRCLE</label>
-      <input type="number" [(ngModel)]="details.DEF_60_CNT_SOCIAL_CIRCLE" />
-    </div>
-    <div class="input-field col s4">
-      <label>GENDER</label>
-      <input type="number" [(ngModel)]="details.CODE_GENDER" />
-    </div>
-    <div class="input-field col s4">
-      <label>LAND AREA MODE</label>
-      <input type="number" [(ngModel)]="details.LANDAREA_MODE" />
-    </div>
-    <div class="input-field col s4">
-      <label>QUERIES LAST MONTH</label>
-      <input type="number" [(ngModel)]="details.AMT_REQ_CREDIT_BUREAU_MON" />
-    </div>
-    <div class="input-field col s4">
-      <label>YEARS MEDIAN</label>
-      <input type="number" [(ngModel)]="details.YEARS_BEGINEXPLUATATION_MEDI" />
-    </div>
-    <div class="input-field col s4">
-      <label>CONTACT ADDRESS SAME AS PERMANENT ADDRESS?</label>
-      <input type="number" [(ngModel)]="details.REG_CITY_NOT_LIVE_CITY" />
-    </div>
-    <div class="input-field col s4">
-      <label>NON LIVING AREA MEDIAN</label>
-      <input type="number" [(ngModel)]="details.NONLIVINGAREA_MEDI" />
-    </div>
-    <div class="input-field col s4">
-      <label>LAND AREA MEDIAN</label>
-      <input type="number" [(ngModel)]="details.LANDAREA_MEDI" />
-    </div>
-    <div class="input-field col s4">
-      <label>BASEMENT AREA MEDIAN</label>
-      <input type="number" [(ngModel)]="details.BASEMENTAREA_MEDI" />
-    </div>
-    <div class="input-field col s4">
-      <label>COMMON AREA MEDIAN</label>
-      <input type="number" [(ngModel)]="details.COMMONAREA_MEDI" />
-    </div>
-    <div class="input-field col s4">
-      <label>YEARS BEGIN AVG</label>
-      <input type="number" [(ngModel)]="details.YEARS_BEGINEXPLUATATION_AVG" />
-    </div>
-    <div class="input-field col s4">
-      <label>OCCUPATION TYPE</label>
-      <input type="number" [(ngModel)]="details.OCCUPATION_TYPE" />
-    </div>
-    <div class="input-field col s4">
-      <label>LIVING AREA MEDIAN</label>
-      <input type="number" [(ngModel)]="details.LIVINGAREA_MEDI" />
-    </div>
-    <div class="input-field col s4">
-      <label>NO OF FAMILY MEMBERS</label>
-      <input type="number" [(ngModel)]="details.CNT_FAM_MEMBERS" />
-    </div>
+    <button class="btn small" (click)="generate()">PREDICT</button>
   </div>
-  <button class="btn small" (click)="generate()">PREDICT</button>
 </div>

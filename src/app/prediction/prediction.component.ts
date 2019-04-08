@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PredictionService } from '../prediction.service';
+import { MatTooltipModule } from '@angular/material';
 
 export interface Details {
   name: string;
@@ -32,7 +33,7 @@ export interface Details {
   LANDAREA_AVG: number;
   BASEMENTAREA_AVG: number;
   DEF_60_CNT_SOCIAL_CIRCLE: number;
-  CODE_GENDER: number; // Radio
+  CODE_GENDER: string; // Radio
   LANDAREA_MODE: number;
   AMT_REQ_CREDIT_BUREAU_MON: number;
   YEARS_BEGINEXPLUATATION_MEDI: number;
