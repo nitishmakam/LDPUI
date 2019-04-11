@@ -50,7 +50,7 @@
           REGISTRATION</label>
         <input type="number" [(ngModel)]="details.DAYS_REGISTRATION" />
       </div>
-      <div class="input-field col s4">
+      <div class="input-field col s8">
         <label matTooltip="How many days before application did client change phone">DAYS SINCE LAST PHONE
           CHANGE</label>
         <input type="number" [(ngModel)]="details.DAYS_LAST_PHONE_CHANGE" />
@@ -88,7 +88,7 @@
           COUNT SOCIAL CIRCLE</label>
         <input type="number" [(ngModel)]="details.DEF_30_CNT_SOCIAL_CIRCLE" />
       </div>
-      <div class="input-field col s4">
+      <div class="input-field col s8">
         <label
           matTooltip="Mode of the Normalized information about building where the client lives. Apartment size, common area, living area, age of building, number of elevators, number of entrances, state of the building, number of floor">YEARS
           BEGIN EXPLUATATION MODE</label>
@@ -141,15 +141,6 @@
           60 CNT SOCIAL CIRCLE</label>
         <input type="number" [(ngModel)]="details.DEF_60_CNT_SOCIAL_CIRCLE" />
       </div>
-      <div class="col s6" style="margin-top: 10px;">
-        <label>Gender</label>
-        <label><input name="gender" type="radio" value="male" [(ngModel)]="details.CODE_GENDER" />
-          <span>Male</span>
-        </label>
-        <label><input name="gender" type="radio" value="female" [(ngModel)]="details.CODE_GENDER" />
-          <span>Female</span>
-        </label>
-      </div>
       <div class="input-field col s4">
         <label matTooltip="Mode of the normalized information of the client's land area">LAND AREA MODE</label>
         <input type="number" [(ngModel)]="details.LANDAREA_MODE" />
@@ -160,20 +151,11 @@
           LAST MONTH</label>
         <input type="number" [(ngModel)]="details.AMT_REQ_CREDIT_BUREAU_MON" />
       </div>
-      <div class="input-field col s4">
+      <div class="input-field col s8">
         <label
           matTooltip="Normalized information about building where the client lives, What is average (_AVG suffix), modus (_MODE suffix), median (_MEDI suffix) apartment size, common area, living area, age of building, number of elevators, number of entrances, state of the building, number of floor">YEARS
           BEGIN EXPLUATATION MEDIAN</label>
         <input type="number" [(ngModel)]="details.YEARS_BEGINEXPLUATATION_MEDI" />
-      </div>
-      <div class="col s6" style="margin-top: 10px;">
-        <label>Contact address same as permanent address?</label>
-        <label><input name="gender" type="radio" value=true [(ngModel)]="details.REG_CITY_NOT_LIVE_CITY" />
-          <span>True</span>
-        </label>
-        <label><input name="gender" type="radio" value=false [(ngModel)]="details.REG_CITY_NOT_LIVE_CITY" />
-          <span>False</span>
-        </label>
       </div>
       <div class="input-field col s4">
         <label
@@ -218,6 +200,24 @@
       <div class="input-field col s4">
         <label matTooltip="How many family members does client have">NO OF FAMILY MEMBERS</label>
         <input type="number" [(ngModel)]="details.CNT_FAM_MEMBERS" />
+      </div>
+      <div class="col s12" style="margin-top: 10px;">
+        <label>Contact address same as permanent address?</label>
+        <label><input name="city" type="radio" value=1 [(ngModel)]="details.REG_CITY_NOT_LIVE_CITY" />
+          <span>True</span>
+        </label>
+        <label><input name="city" type="radio" value=0 [(ngModel)]="details.REG_CITY_NOT_LIVE_CITY" />
+          <span>False</span>
+        </label>
+      </div>
+      <div class="col s12" style="margin-top: 10px;">
+        <label>Gender</label>
+        <label><input name="gender" type="radio" value=0 [(ngModel)]="details.CODE_GENDER" />
+          <span>Male</span>
+        </label>
+        <label><input name="gender" type="radio" value=1 [(ngModel)]="details.CODE_GENDER" />
+          <span>Female</span>
+        </label>
       </div>
     </div>
     <button class="btn small" (click)="generate()">PREDICT</button>

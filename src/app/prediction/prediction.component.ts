@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { PredictionService } from '../prediction.service';
-import { MatTooltipModule } from '@angular/material';
+import { MatTooltipModule, MatDialog } from '@angular/material';
+import { validateConfig } from '@angular/router/src/config';
+import { ModalComponent } from '../modal/modal.component';
 
-export interface Details {
+export class Details {
   name: string;
   EXT_SOURCE_1: number;
   EXT_SOURCE_2: number;
@@ -55,20 +57,51 @@ export interface Details {
 export class PredictionComponent implements OnInit {
 
   private details: Details;
-  constructor(private predService: PredictionService) {
-    this.details = <Details>{};
+  private dialogOpened: boolean;
+  constructor(private predService: PredictionService, public dialog: MatDialog) {
+    this.details = new Details();
+    this.dialogOpened = false;
   }
 
   ngOnInit() {
   }
 
+
+
   generate() {
     console.log(this.details);
+    if (this.validate() === false) {
+      return;
+    }
     this.predService.generate(this.details).subscribe(x => {
       console.log(x);
     },
       err => {
         console.log(err);
       });
+  }
+
+  validate() {
+    if (Object.keys(this.details).length < 42) {
+      this.openDialog();
+      return false;
+    }
+    return true;
+  }
+
+  openDialog() {
+
+    if (!this.dialogOpened) {
+      this.dialogOpened = !this.dialogOpened;
+      const dialogRef = this.dialog.open(ModalComponent,
+        {
+          height: '0px',
+          width: '0px',
+          data: 'One or more fields are empty'
+        });
+      dialogRef.afterClosed().subscribe(x => {
+        this.dialogOpened = false;
+      });
+    }
   }
 }

@@ -25,11 +25,6 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.homeService.try().subscribe((data: any) => {
-      console.log(data);
-    }, err => {
-      console.log(err);
-    });
   }
 
   logout() {

@@ -13,6 +13,8 @@ import { MatProgressSpinnerModule, MatSidenavModule, MatDialogModule, MatExpansi
 import { SnackbarComponent } from './snackbar/snackbar.component';
 import { ProfileComponent } from './profile/profile.component';
 import { PredictionComponent } from './prediction/prediction.component';
+import { ModalComponent } from './modal/modal.component';
+import { ResultComponent } from './result/result.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { PredictionComponent } from './prediction/prediction.component';
     HomeComponent,
     SnackbarComponent,
     ProfileComponent,
-    PredictionComponent
+    PredictionComponent,
+    ModalComponent,
+    ResultComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,8 @@ import { PredictionComponent } from './prediction/prediction.component';
   ],
   providers: [],
   entryComponents: [
-    SnackbarComponent
+    SnackbarComponent,
+    ModalComponent
   ],
   bootstrap: [AppComponent]
 })
