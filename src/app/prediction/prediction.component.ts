@@ -58,9 +58,16 @@ export class PredictionComponent implements OnInit {
 
   private details: Details;
   private dialogOpened: boolean;
+
+  private pred1: number;
+  private pred2: number;
+  private pred3: number;
+  private prediction: number;
+  private showResult: boolean;
   constructor(private predService: PredictionService, public dialog: MatDialog) {
     this.details = new Details();
     this.dialogOpened = false;
+    this.showResult = false;
   }
 
   ngOnInit() {
@@ -75,6 +82,11 @@ export class PredictionComponent implements OnInit {
     }
     this.predService.generate(this.details).subscribe(x => {
       console.log(x);
+      this.pred1 = x['p1'];
+      this.pred2 = x['p2'];
+      this.pred3 = x['p3'];
+      this.prediction = x['prediction'];
+      this.showResult = true;
     },
       err => {
         console.log(err);
