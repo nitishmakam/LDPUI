@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { PredictionService } from '../prediction.service';
 import { MatTooltipModule, MatDialog } from '@angular/material';
 import { validateConfig } from '@angular/router/src/config';
@@ -48,6 +48,14 @@ export class Details {
   OCCUPATION_TYPE: number;  // Dropdown // Low skill labourers
   LIVINGAREA_MEDI: number;
   CNT_FAM_MEMBERS: number;
+  results: Results;
+}
+
+export class Results {
+  p0: number;
+  p1: number;
+  p2: number;
+  prediction: number;
 }
 @Component({
   selector: 'app-prediction',
@@ -56,18 +64,17 @@ export class Details {
 })
 export class PredictionComponent implements OnInit {
 
-  private details: Details;
+
+  @Input() inputDisabled = false;
+  @Input() details = new Details();
+  @Input() result = new Results();
+  @Input() showSave = true;
+  @Input() showPredict = true;
+  @Input() showResult = false;
   private dialogOpened: boolean;
 
-  private pred1: number;
-  private pred2: number;
-  private pred3: number;
-  private prediction: number;
-  private showResult: boolean;
   constructor(private predService: PredictionService, public dialog: MatDialog) {
-    this.details = new Details();
     this.dialogOpened = false;
-    this.showResult = false;
   }
 
   ngOnInit() {
@@ -82,10 +89,11 @@ export class PredictionComponent implements OnInit {
     }
     this.predService.generate(this.details).subscribe(x => {
       console.log(x);
-      this.pred1 = x['p1'];
-      this.pred2 = x['p2'];
-      this.pred3 = x['p3'];
-      this.prediction = x['prediction'];
+      this.details.results = new Results();
+      this.details.results.p0 = x['p0'];
+      this.details.results.p1 = x['p1'];
+      this.details.results.p2 = x['p2'];
+      this.details.results.prediction = x['prediction'];
       this.showResult = true;
     },
       err => {
