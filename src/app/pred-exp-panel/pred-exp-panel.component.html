@@ -1,0 +1,13 @@
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      <span class="flow-text">{{details.name}}</span>
+    </mat-panel-title>
+    <!-- <i class="material-icons red-text" (click)="delete()">delete</i> -->
+  </mat-expansion-panel-header>
+  <mat-panel-description>
+    <app-prediction class="col s12" [inputDisabled]=true [details]="details" [result]="details.result" [showSave]=false
+      [showPredict]=false [showResult]=true>
+    </app-prediction>
+  </mat-panel-description>
+</mat-expansion-panel>

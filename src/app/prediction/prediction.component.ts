@@ -102,7 +102,8 @@ export class PredictionComponent implements OnInit {
   }
 
   validate() {
-    if (Object.keys(this.details).length < 42) {
+    console.log(Object.keys(this.details).length);
+    if (Object.keys(this.details).length < 43) {
       this.openDialog();
       return false;
     }

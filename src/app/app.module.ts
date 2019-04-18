@@ -15,6 +15,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { PredictionComponent } from './prediction/prediction.component';
 import { ModalComponent } from './modal/modal.component';
 import { ResultComponent } from './result/result.component';
+import { PredExpPanelComponent } from './pred-exp-panel/pred-exp-panel.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ResultComponent } from './result/result.component';
     ProfileComponent,
     PredictionComponent,
     ModalComponent,
-    ResultComponent
+    ResultComponent,
+    PredExpPanelComponent
   ],
   imports: [
     BrowserModule,

@@ -1,223 +1,244 @@
 <div class="row">
-  <div class="card col s10">
+  <div class="card col s12">
     <div class="row">
       <div class="input-field col s6">
-        <label matTooltip="Name to identify your prediction">Name</label>
+        <label [ngClass]="{'active': inputDisabled==true}" matTooltip="Name to identify your prediction">Name</label>
         <input [disabled]="inputDisabled" type="text" [(ngModel)]="details.name" />
       </div>
     </div>
     <div class="row">
       <div class="input-field col s4">
-        <label matTooltip="Normalized score from external data source">EXTERNAL SOURCE 1</label>
+        <label [ngClass]="{'active': inputDisabled==true}"
+          matTooltip="Normalized score from external data source">EXTERNAL SOURCE 1</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.EXT_SOURCE_1" />
       </div>
       <div class="input-field col s4">
-        <label matTooltip="Normalized score from externald data source">EXTERNAL SOURCE 2</label>
+        <label [ngClass]="{'active': inputDisabled==true}"
+          matTooltip="Normalized score from externald data source">EXTERNAL SOURCE 2</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.EXT_SOURCE_2" />
       </div>
       <div class="input-field col s4">
-        <label matTooltip="Normalized score from externald data source">EXTERNAL SOURCE 3</label>
+        <label [ngClass]="{'active': inputDisabled==true}"
+          matTooltip="Normalized score from externald data source">EXTERNAL SOURCE 3</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.EXT_SOURCE_3" />
       </div>
       <div class="input-field col s4">
-        <label>AGE IN DAYS</label>
+        <label [ngClass]="{'active': inputDisabled==true}">AGE IN DAYS</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.DAYS_BIRTH" />
       </div>
       <div class="input-field col s4">
-        <label>DAYS IN EMPLOYMENT</label>
+        <label [ngClass]="{'active': inputDisabled==true}">DAYS IN EMPLOYMENT</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.DAYS_EMPLOYED" />
       </div>
       <div class="input-field col s4">
-        <label matTooltip="Loan Annuity">ANNUITY</label>
+        <label [ngClass]="{'active': inputDisabled==true}" matTooltip="Loan Annuity">ANNUITY</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.AMT_ANNUITY" />
       </div>
       <div class="input-field col s4">
-        <label matTooltip="Credit amount of the loan">CREDIT</label>
+        <label [ngClass]="{'active': inputDisabled==true}" matTooltip="Credit amount of the loan">CREDIT</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.AMT_CREDIT" />
       </div>
       <div class="input-field col s4">
-        <label matTooltip="Price of goods for which the loan was given">GOODS PRICE</label>
+        <label [ngClass]="{'active': inputDisabled==true}"
+          matTooltip="Price of goods for which the loan was given">GOODS PRICE</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.AMT_GOODS_PRICE" />
       </div>
       <div class="input-field col s4">
-        <label
+        <label [ngClass]="{'active': inputDisabled==true}"
           matTooltip="How many days before the application did client change the identity document with which he applied for the loan">DAYS
           PUBLISHED</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.DAYS_ID_PUBLISH" />
       </div>
       <div class="input-field col s4">
-        <label matTooltip="How many days before the application did client change his registration">DAYS
+        <label [ngClass]="{'active': inputDisabled==true}"
+          matTooltip="How many days before the application did client change his registration">DAYS
           REGISTRATION</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.DAYS_REGISTRATION" />
       </div>
       <div class="input-field col s8">
-        <label matTooltip="How many days before application did client change phone">DAYS SINCE LAST PHONE
+        <label [ngClass]="{'active': inputDisabled==true}"
+          matTooltip="How many days before application did client change phone">DAYS SINCE LAST PHONE
           CHANGE</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.DAYS_LAST_PHONE_CHANGE" />
       </div>
       <div class="input-field col s4">
-        <label matTooltip="Income of the client">TOTAL INCOME</label>
+        <label [ngClass]="{'active': inputDisabled==true}" matTooltip="Income of the client">TOTAL INCOME</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.AMT_INCOME_TOTAL" />
       </div>
       <div class="input-field col s4">
-        <label matTooltip="Age of client's car">AGE OF CAR</label>
+        <label [ngClass]="{'active': inputDisabled==true}" matTooltip="Age of client's car">AGE OF CAR</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.OWN_CAR_AGE" />
       </div>
       <div class="input-field col s4">
-        <label matTooltip="Normalized population of region where client lives">POPULATION DENSITY</label>
+        <label [ngClass]="{'active': inputDisabled==true}"
+          matTooltip="Normalized population of region where client lives">POPULATION DENSITY</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.REGION_POPULATION_RELATIVE" />
       </div>
       <div class="input-field col s4">
-        <label matTooltip="Approximately at what hour did the client apply for the loan">HOUR</label>
+        <label [ngClass]="{'active': inputDisabled==true}"
+          matTooltip="Approximately at what hour did the client apply for the loan">HOUR</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.HOUR_APPR_PROCESS_START" />
       </div>
       <div class="input-field col s4">
-        <label
+        <label [ngClass]="{'active': inputDisabled==true}"
           matTooltip="Number of enquiries to Credit Bureau about the client one day year (excluding last 3 months before application)">QUERIES
           LAST YEAR</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.AMT_REQ_CREDIT_BUREAU_YEAR" />
       </div>
       <div class="input-field col s4">
-        <label
+        <label [ngClass]="{'active': inputDisabled==true}"
           matTooltip="Number of enquiries to Credit Bureau about the client 3 month before application (excluding one month before application)">QUERIES
           LAST QUARTER</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.AMT_REQ_CREDIT_BUREAU_QRT" />
       </div>
       <div class="input-field col s4">
-        <label matTooltip="How many observation of client's social surroundings defaulted on 30 DPD (days past due)">30
+        <label [ngClass]="{'active': inputDisabled==true}"
+          matTooltip="How many observation of client's social surroundings defaulted on 30 DPD (days past due)">30
           COUNT SOCIAL CIRCLE</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.DEF_30_CNT_SOCIAL_CIRCLE" />
       </div>
       <div class="input-field col s8">
-        <label
+        <label [ngClass]="{'active': inputDisabled==true}"
           matTooltip="Mode of the Normalized information about building where the client lives. Apartment size, common area, living area, age of building, number of elevators, number of entrances, state of the building, number of floor">YEARS
           BEGIN EXPLUATATION MODE</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.YEARS_BEGINEXPLUATATION_MODE" />
       </div>
       <div class="input-field col s4">
-        <label matTooltip="Mode of the total area of the client's living area">TOTAL AREA MODE</label>
+        <label [ngClass]="{'active': inputDisabled==true}"
+          matTooltip="Mode of the total area of the client's living area">TOTAL AREA MODE</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.TOTALAREA_MODE" />
       </div>
       <div class="input-field col s4">
-        <label
+        <label [ngClass]="{'active': inputDisabled==true}"
           matTooltip="How many observation of client's social surroundings with observable 60 DPD (days past due) default">60
           SOCIAL CIRCLE</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.OBS_60_CNT_SOCIAL_CIRCLE" />
       </div>
       <div class="input-field col s4">
-        <label
+        <label [ngClass]="{'active': inputDisabled==true}"
           matToltip="How many observation of client's social surroundings with observable 30 DPD (days past due) default">30
           SOCIAL CIRCLE</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.OBS_30_CNT_SOCIAL_CIRCLE" />
       </div>
       <div class="input-field col s4">
-        <label matTooltip="Mode of the basement area of the client's living area">BASEMENT AREA MODE</label>
+        <label [ngClass]="{'active': inputDisabled==true}"
+          matTooltip="Mode of the basement area of the client's living area">BASEMENT AREA MODE</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.BASEMENTAREA_MODE" />
       </div>
       <div class="input-field col s4">
-        <label matTooltip="Contract Product Type">CONTRACT TYPE</label>
+        <label [ngClass]="{'active': inputDisabled==true}" matTooltip="Contract Product Type">CONTRACT TYPE</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.NAME_CONTRACT_TYPE" />
       </div>
       <div class="input-field col s4">
-        <label matTooltip="Our rating of the region where client lives with taking city into account (1,2,3)">REGION
+        <label [ngClass]="{'active': inputDisabled==true}"
+          matTooltip="Our rating of the region where client lives with taking city into account (1,2,3)">REGION
           RATING</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.REGION_RATING_CLIENT_W_CITY" />
       </div>
       <div class="input-field col s4">
-        <label matTooltip="Mode of the normalized information of the client's living area">APARTMENTS MODE</label>
+        <label [ngClass]="{'active': inputDisabled==true}"
+          matTooltip="Mode of the normalized information of the client's living area">APARTMENTS MODE</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.APARTMENTS_MODE" />
       </div>
       <div class="input-field col s4">
-        <label matTooltip="Average of the normalized information of the client's land area">LAND AREA AVERAGE</label>
+        <label [ngClass]="{'active': inputDisabled==true}"
+          matTooltip="Average of the normalized information of the client's land area">LAND AREA AVERAGE</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.LANDAREA_AVG" />
       </div>
       <div class="input-field col s4">
-        <label matTooltip="Average of the normalized information of the client's basement area">BASEMENT AREA
+        <label [ngClass]="{'active': inputDisabled==true}"
+          matTooltip="Average of the normalized information of the client's basement area">BASEMENT AREA
           AVERAGE</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.BASEMENTAREA_AVG" />
       </div>
       <div class="input-field col s4">
-        <label matTooltip="How many observation of client's social surroundings defaulted on 60 (days past due) DPD">DEF
+        <label [ngClass]="{'active': inputDisabled==true}"
+          matTooltip="How many observation of client's social surroundings defaulted on 60 (days past due) DPD">DEF
           60 CNT SOCIAL CIRCLE</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.DEF_60_CNT_SOCIAL_CIRCLE" />
       </div>
       <div class="input-field col s4">
-        <label matTooltip="Mode of the normalized information of the client's land area">LAND AREA MODE</label>
+        <label [ngClass]="{'active': inputDisabled==true}"
+          matTooltip="Mode of the normalized information of the client's land area">LAND AREA MODE</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.LANDAREA_MODE" />
       </div>
       <div class="input-field col s4">
-        <label
+        <label [ngClass]="{'active': inputDisabled==true}"
           matTooltip="Number of enquiries to Credit Bureau about the client one month before application (excluding one week before application)">QUERIES
           LAST MONTH</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.AMT_REQ_CREDIT_BUREAU_MON" />
       </div>
       <div class="input-field col s8">
-        <label
+        <label [ngClass]="{'active': inputDisabled==true}"
           matTooltip="Normalized information about building where the client lives, What is average (_AVG suffix), modus (_MODE suffix), median (_MEDI suffix) apartment size, common area, living area, age of building, number of elevators, number of entrances, state of the building, number of floor">YEARS
           BEGIN EXPLUATATION MEDIAN</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.YEARS_BEGINEXPLUATATION_MEDI" />
       </div>
       <div class="input-field col s4">
-        <label
+        <label [ngClass]="{'active': inputDisabled==true}"
           matTooltip="Normalized information about building where the client lives, What is average (_AVG suffix), modus (_MODE suffix), median (_MEDI suffix) apartment size, common area, living area, age of building, number of elevators, number of entrances, state of the building, number of floor">NON
           LIVING AREA MEDIAN</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.NONLIVINGAREA_MEDI" />
       </div>
       <div class="input-field col s4">
-        <label
+        <label [ngClass]="{'active': inputDisabled==true}"
           matTooltip="Normalized information about building where the client lives, What is average (_AVG suffix), modus (_MODE suffix), median (_MEDI suffix) apartment size, common area, living area, age of building, number of elevators, number of entrances, state of the building, number of floor">LAND
           AREA MEDIAN</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.LANDAREA_MEDI" />
       </div>
       <div class="input-field col s4">
-        <label
+        <label [ngClass]="{'active': inputDisabled==true}"
           matTooltip="Normalized information about building where the client lives, What is average (_AVG suffix), modus (_MODE suffix), median (_MEDI suffix) apartment size, common area, living area, age of building, number of elevators, number of entrances, state of the building, number of floor">BASEMENT
           AREA MEDIAN</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.BASEMENTAREA_MEDI" />
       </div>
       <div class="input-field col s4">
-        <label
+        <label [ngClass]="{'active': inputDisabled==true}"
           matTooltip="Normalized information about building where the client lives, What is average (_AVG suffix), modus (_MODE suffix), median (_MEDI suffix) apartment size, common area, living area, age of building, number of elevators, number of entrances, state of the building, number of floor">COMMON
           AREA MEDIAN</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.COMMONAREA_MEDI" />
       </div>
       <div class="input-field col s4">
-        <label
+        <label [ngClass]="{'active': inputDisabled==true}"
           matTooltip="Normalized information about building where the client lives, What is average (_AVG suffix), modus (_MODE suffix), median (_MEDI suffix) apartment size, common area, living area, age of building, number of elevators, number of entrances, state of the building, number of floor">YEARS
           BEGIN AVG</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.YEARS_BEGINEXPLUATATION_AVG" />
       </div>
       <div class="input-field col s4">
-        <label matTooltip="What kind of occupation does the client have">OCCUPATION TYPE</label>
+        <label [ngClass]="{'active': inputDisabled==true}"
+          matTooltip="What kind of occupation does the client have">OCCUPATION TYPE</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.OCCUPATION_TYPE" />
       </div>
       <div class="input-field col s4">
-        <label
+        <label [ngClass]="{'active': inputDisabled==true}"
           matTooltip="Normalized information about building where the client lives, What is average (_AVG suffix), modus (_MODE suffix), median (_MEDI suffix) apartment size, common area, living area, age of building, number of elevators, number of entrances, state of the building, number of floor">LIVING
           AREA MEDIAN</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.LIVINGAREA_MEDI" />
       </div>
       <div class="input-field col s4">
-        <label matTooltip="How many family members does client have">NO OF FAMILY MEMBERS</label>
+        <label [ngClass]="{'active': inputDisabled==true}" matTooltip="How many family members does client have">NO OF
+          FAMILY MEMBERS</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.CNT_FAM_MEMBERS" />
       </div>
       <div class="col s12" style="margin-top: 10px;">
         <label>Contact address same as permanent address?</label>
-        <label><input [disabled]="inputDisabled" name="city" type="radio" value=1
-            [(ngModel)]="details.REG_CITY_NOT_LIVE_CITY" />
+        <label>
+          <input [disabled]="inputDisabled" name="city" type="radio" value=1 [(ngModel)]="details.REG_CITY_NOT_LIVE_CITY" />
           <span>True</span>
         </label>
-        <label><input [disabled]="inputDisabled" name="city" type="radio" value=0
-            [(ngModel)]="details.REG_CITY_NOT_LIVE_CITY" />
+        <label>
+          <input [disabled]="inputDisabled" name="city" type="radio" value=0 [(ngModel)]="details.REG_CITY_NOT_LIVE_CITY" />
           <span>False</span>
         </label>
       </div>
       <div class="col s12" style="margin-top: 10px;">
         <label>Gender</label>
-        <label><input [disabled]="inputDisabled" name="gender" type="radio" value=0 [(ngModel)]="details.CODE_GENDER" />
+        <label>
+          <input [disabled]="inputDisabled" name="gender" type="radio" value=0 [(ngModel)]="details.CODE_GENDER" />
           <span>Male</span>
         </label>
-        <label><input [disabled]="inputDisabled" name="gender" type="radio" value=1 [(ngModel)]="details.CODE_GENDER" />
+        <label>
+          <input [disabled]="inputDisabled" name="gender" type="radio" value=1 [(ngModel)]="details.CODE_GENDER" />
           <span>Female</span>
         </label>
       </div>

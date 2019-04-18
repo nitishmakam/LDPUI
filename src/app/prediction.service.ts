@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Details } from './prediction/prediction.component';
 
 declare let endpoint: any;
@@ -8,9 +8,14 @@ declare let endpoint: any;
 })
 export class PredictionService {
 
-  constructor(private http: HttpClient) { }
+  private headers: HttpHeaders;
+  constructor(private http: HttpClient) {
+    this.headers = new HttpHeaders({
+      'token': localStorage.getItem('token')
+    });
+  }
 
   generate(details: Details) {
-    return this.http.post(endpoint.concat('/prediction/generate'), details);
+    return this.http.post(endpoint.concat('/prediction/generate'), details, { headers: this.headers });
   }
 }

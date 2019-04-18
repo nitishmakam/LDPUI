@@ -13,8 +13,9 @@
     </nav>
     <div class="container">
       <h4>Past Predictions</h4>
-      <app-prediction></app-prediction>
-      <!-- <button class="btn small" (click)="test()">test</button> -->
+      <mat-accordion class="example-headers-align">
+        <app-pred-exp-panel *ngFor="let detail of details" [details]="detail"></app-pred-exp-panel>
+      </mat-accordion>
     </div>
   </mat-drawer-content>
 
@@ -34,9 +35,9 @@
       <li>
         <div class="divider"></div>
       </li>
-      <!-- <li>
+      <li>
         <a routerLink="/profile">My Profile</a>
-      </li> -->
+      </li>
       <li>
         <a (click)="logout()"><i class="material-icons">arrow_back</i>Logout</a>
       </li>

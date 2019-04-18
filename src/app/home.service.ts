@@ -12,7 +12,4 @@ export class HomeService {
       'token': localStorage.getItem('token')
     });
   }
-  // try() {
-  //   return this.http.get(endpoint.concat('/prediction/'), { headers: this.headers });
-  // }
 }

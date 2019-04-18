@@ -1,22 +1,26 @@
 <div class="row">
   <div class="card col s11 centre">
     <div class="card-panel teal col s3">
+      <span class="white-text">Model 1</span>
       <h4 class="white-text">{{details.results.p0|number:'1.1-3'}}</h4>
     </div>
     <div class="col s1"></div>
     <div class="card-panel teal col s3">
+      <span class="white-text">Model 2</span>
       <h4 class="white-text">{{details.results.p1|number:'1.1-3'}}</h4>
     </div>
     <div class="col s1"></div>
     <div class="card-panel teal col s3">
+      <span class="white-text">Model 3</span>
       <h4 class="white-text">{{details.results.p2|number:'1.1-3'}}</h4>
     </div>
     <!-- <div class="col s1"></div> -->
     <div class="card col s11">
+      <span>Overall</span>
       <h3>{{details.results.prediction|number:'1.1-3'}}</h3>
     </div>
   </div>
   <div class="card-action">
-    <button class="btn small" (click)="save()">SAVE</button>
+    <button class="btn small" (click)="save()" *ngIf="showSave">SAVE</button>
   </div>
 </div>
