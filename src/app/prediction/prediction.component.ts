@@ -5,6 +5,7 @@ import { validateConfig } from '@angular/router/src/config';
 import { ModalComponent } from '../modal/modal.component';
 
 export class Details {
+  id: string;
   name: string;
   EXT_SOURCE_1: number;
   EXT_SOURCE_2: number;

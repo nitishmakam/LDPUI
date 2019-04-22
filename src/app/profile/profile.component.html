@@ -2,8 +2,8 @@
   <mat-drawer-content>
     <nav>
       <div class="nav-wrapper teal">
-        <a style="height:100%;width:10%" class="brand-logo center"><img style="height:100%;width:100%"
-            src="../assets/LDePLogo.png" /></a>
+        <a style="height:100%;width:10%" class="brand-logo center" routerLink="/home"><img
+            style="height:100%;width:100%" src="../assets/LDePLogo.png" /></a>
         <ul class="left">
           <li>
             <a class="left" (click)="snav.toggle()"><i class="material-icons">menu</i></a>
@@ -14,7 +14,8 @@
     <div class="container">
       <h4>Past Predictions</h4>
       <mat-accordion class="example-headers-align">
-        <app-pred-exp-panel *ngFor="let detail of details" [details]="detail"></app-pred-exp-panel>
+        <app-pred-exp-panel (deleteId)="delete($event,i)" *ngFor="let detail of details;index as i" [details]="detail">
+        </app-pred-exp-panel>
       </mat-accordion>
     </div>
   </mat-drawer-content>
@@ -36,7 +37,7 @@
         <div class="divider"></div>
       </li>
       <li>
-        <a routerLink="/profile">My Profile</a>
+        <a routerLink="/home">Home</a>
       </li>
       <li>
         <a (click)="logout()"><i class="material-icons">arrow_back</i>Logout</a>

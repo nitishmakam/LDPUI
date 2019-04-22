@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ResultService } from '../result.service';
 import { MatExpansionPanel } from '@angular/material';
 import { Details } from '../prediction/prediction.component';
+import { ProfileService } from '../profile.service';
 
 @Component({
   selector: 'app-profile',
@@ -15,12 +15,12 @@ export class ProfileComponent implements OnInit {
   private email: string;
   private details: Details[];
 
-  constructor(private router: Router, private resultService: ResultService) {
+  constructor(private router: Router, private profileService: ProfileService) {
     this.details = [];
   }
 
   ngOnInit() {
-    this.resultService.get().subscribe(
+    this.profileService.get().subscribe(
       x => {
         console.log(x);
         this.details = x as Details[];
@@ -28,6 +28,14 @@ export class ProfileComponent implements OnInit {
     );
     this.username = localStorage.getItem('username');
     this.email = localStorage.getItem('email');
+  }
+
+  delete(id: string, index: number) {
+    this.profileService.delete(id).subscribe(
+      x => {
+        this.details.splice(index, 1);
+      }
+    );
   }
 
   logout() {

@@ -3,7 +3,6 @@ import { MatDialog, MatSnackBar, MatSidenavModule, MatExpansionPanel } from '@an
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { HomeService } from '../home.service';
 import { SnackbarComponent } from '../snackbar/snackbar.component';
 
 declare let endpoint: any;
@@ -19,7 +18,7 @@ export class HomeComponent implements OnInit {
   private email: string;
   private endpoint: string;
 
-  constructor(private homeService: HomeService, private router: Router) {
+  constructor(private router: Router) {
     this.username = localStorage.getItem('username');
     this.email = localStorage.getItem('email');
   }

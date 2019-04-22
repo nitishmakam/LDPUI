@@ -18,8 +18,5 @@ export class ResultService {
   save(details: Details) {
     return this.http.post(endpoint.concat('/prediction/save'), details, { headers: this.headers });
   }
-  get() {
-    return this.http.get(endpoint.concat('/prediction/'), { headers: this.headers });
-  }
 
 }
