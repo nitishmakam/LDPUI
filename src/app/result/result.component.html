@@ -19,10 +19,10 @@
     <span>Overall</span>
     <h3>{{details.results.prediction*100|number:'1.1-2'}}%</h3>
   </div>
-  <div class="card-action col s9">
+  <div *ngIf="showSave" class="card-action col s9">
     <button class="btn small" (click)="save()" *ngIf="showSave">SAVE</button>
   </div>
-  <span class="col s3 grey-text" style="margin-top:35px;">
+  <span *ngIf="showSave" class="col s3 grey-text" style="margin-top:35px;">
     *Probability of default
   </span>
 </div>

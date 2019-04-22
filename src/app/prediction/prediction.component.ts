@@ -99,19 +99,22 @@ export class PredictionComponent implements OnInit {
     },
       err => {
         console.log(err);
+        if (err.status === 500) {
+          this.openDialog('Internal Server Error occured.');
+        }
       });
   }
 
   validate() {
     console.log(Object.keys(this.details).length);
     if (Object.keys(this.details).length < 43) {
-      this.openDialog();
+      this.openDialog('One or more fields are empty');
       return false;
     }
     return true;
   }
 
-  openDialog() {
+  openDialog(errorMsg: string) {
 
     if (!this.dialogOpened) {
       this.dialogOpened = !this.dialogOpened;
@@ -119,7 +122,7 @@ export class PredictionComponent implements OnInit {
         {
           height: '0px',
           width: '0px',
-          data: 'One or more fields are empty'
+          data: errorMsg
         });
       dialogRef.afterClosed().subscribe(x => {
         this.dialogOpened = false;

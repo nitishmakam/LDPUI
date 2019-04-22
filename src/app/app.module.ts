@@ -9,7 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { RootComponent } from './root/root.component';
 import { HomeComponent } from './home/home.component';
-import { MatProgressSpinnerModule, MatSidenavModule, MatDialogModule, MatExpansionModule, MatIconModule, MatTooltipModule } from '@angular/material';
+import { MatProgressSpinnerModule, MatSidenavModule, MatDialogModule, MatExpansionModule, MatIconModule, MatTooltipModule, MatSnackBarModule } from '@angular/material';
 import { SnackbarComponent } from './snackbar/snackbar.component';
 import { ProfileComponent } from './profile/profile.component';
 import { PredictionComponent } from './prediction/prediction.component';
@@ -36,6 +36,7 @@ import { PredExpPanelComponent } from './pred-exp-panel/pred-exp-panel.component
     HttpClientModule,
     FormsModule,
     MatProgressSpinnerModule,
+    MatSnackBarModule,
     MatSidenavModule,
     MatDialogModule,
     MatExpansionModule,
