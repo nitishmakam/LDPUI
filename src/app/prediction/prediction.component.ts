@@ -1,8 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { PredictionService } from '../prediction.service';
-import { MatTooltipModule, MatDialog } from '@angular/material';
+import { MatTooltipModule, MatDialog, MatFormField } from '@angular/material';
 import { validateConfig } from '@angular/router/src/config';
 import { ModalComponent } from '../modal/modal.component';
+import { formatDate } from '@angular/common';
 
 export class Details {
   id: string;
@@ -10,7 +11,7 @@ export class Details {
   EXT_SOURCE_1: number;
   EXT_SOURCE_2: number;
   EXT_SOURCE_3: number;
-  DAYS_BIRTH: number;
+  DAYS_BIRTH: Date;
   DAYS_EMPLOYED: number;
   AMT_ANNUITY: number;
   AMT_CREDIT: number;
@@ -30,7 +31,6 @@ export class Details {
   OBS_60_CNT_SOCIAL_CIRCLE: number;
   OBS_30_CNT_SOCIAL_CIRCLE: number;
   BASEMENTAREA_MODE: number;
-  NAME_CONTRACT_TYPE: number;   // Drop down /radio // was cash loans
   REGION_RATING_CLIENT_W_CITY: number;
   APARTMENTS_MODE: number;
   LANDAREA_AVG: number;
@@ -46,7 +46,6 @@ export class Details {
   BASEMENTAREA_MEDI: number;
   COMMONAREA_MEDI: number;
   YEARS_BEGINEXPLUATATION_AVG: number;
-  OCCUPATION_TYPE: number;  // Dropdown // Low skill labourers
   LIVINGAREA_MEDI: number;
   CNT_FAM_MEMBERS: number;
   results: Results;
@@ -73,9 +72,12 @@ export class PredictionComponent implements OnInit {
   @Input() showPredict = true;
   @Input() showResult = false;
   private dialogOpened: boolean;
+  today: string;
+  jstoday = '';
 
   constructor(private predService: PredictionService, public dialog: MatDialog) {
     this.dialogOpened = false;
+    this.today = formatDate(new Date(), 'yyyy-MM-dd', 'en-IN');
   }
 
   ngOnInit() {
@@ -90,7 +92,9 @@ export class PredictionComponent implements OnInit {
     }
     this.predService.generate(this.details).subscribe(x => {
       console.log(x);
-      this.details.results = new Results();
+      if (this.details.results == null) {
+        this.details.results = new Results();
+      }
       this.details.results.p0 = x['p0'];
       this.details.results.p1 = x['p1'];
       this.details.results.p2 = x['p2'];
@@ -107,7 +111,7 @@ export class PredictionComponent implements OnInit {
 
   validate() {
     console.log(Object.keys(this.details).length);
-    if (Object.keys(this.details).length < 43) {
+    if (Object.keys(this.details).length < 41) {
       this.openDialog('One or more fields are empty');
       return false;
     }

@@ -23,19 +23,23 @@
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.EXT_SOURCE_3" />
       </div>
       <div class="input-field col s4">
-        <label [ngClass]="{'active': inputDisabled==true}">AGE IN DAYS</label>
-        <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.DAYS_BIRTH" />
+        <label [ngClass]="{'active': inputDisabled==true}">DATE OF BIRTH OF CLIENT</label>
+        <input placeholder="" [disabled]="inputDisabled" type="date" [max]="today" [(ngModel)]="details.DAYS_BIRTH" />
       </div>
       <div class="input-field col s4">
-        <label [ngClass]="{'active': inputDisabled==true}">DAYS IN EMPLOYMENT</label>
+        <label [ngClass]="{'active': inputDisabled==true}"
+          matTooltip="How many days before the application the person started current employment">DAYS IN
+          EMPLOYMENT</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.DAYS_EMPLOYED" />
       </div>
       <div class="input-field col s4">
-        <label [ngClass]="{'active': inputDisabled==true}" matTooltip="Loan Annuity">ANNUITY</label>
+        <label matTooltip="Annuity of the Credit Bureau credit"
+          [ngClass]="{'active': inputDisabled==true}">ANNUITY</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.AMT_ANNUITY" />
       </div>
       <div class="input-field col s4">
-        <label [ngClass]="{'active': inputDisabled==true}" matTooltip="Credit amount of the loan">CREDIT</label>
+        <label matTooltip="Credit amount of the loan" [ngClass]="{'active': inputDisabled==true}"
+          matTooltip="Credit amount of the loan">CREDIT</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.AMT_CREDIT" />
       </div>
       <div class="input-field col s4">
@@ -126,10 +130,6 @@
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.BASEMENTAREA_MODE" />
       </div>
       <div class="input-field col s4">
-        <label [ngClass]="{'active': inputDisabled==true}" matTooltip="Contract Product Type">CONTRACT TYPE</label>
-        <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.NAME_CONTRACT_TYPE" />
-      </div>
-      <div class="input-field col s4">
         <label [ngClass]="{'active': inputDisabled==true}"
           matTooltip="Our rating of the region where client lives with taking city into account (1,2,3)">REGION
           RATING</label>
@@ -206,11 +206,6 @@
       </div>
       <div class="input-field col s4">
         <label [ngClass]="{'active': inputDisabled==true}"
-          matTooltip="What kind of occupation does the client have">OCCUPATION TYPE</label>
-        <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.OCCUPATION_TYPE" />
-      </div>
-      <div class="input-field col s4">
-        <label [ngClass]="{'active': inputDisabled==true}"
           matTooltip="Normalized information about building where the client lives, What is average (_AVG suffix), modus (_MODE suffix), median (_MEDI suffix) apartment size, common area, living area, age of building, number of elevators, number of entrances, state of the building, number of floor">LIVING
           AREA MEDIAN</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.LIVINGAREA_MEDI" />
@@ -223,11 +218,13 @@
       <div class="col s12" style="margin-top: 10px;">
         <label>Contact address same as permanent address?</label>
         <label>
-          <input [disabled]="inputDisabled" name="city" type="radio" value=1 [(ngModel)]="details.REG_CITY_NOT_LIVE_CITY" />
+          <input [disabled]="inputDisabled" name="city" type="radio" value=1
+            [(ngModel)]="details.REG_CITY_NOT_LIVE_CITY" />
           <span>True</span>
         </label>
         <label>
-          <input [disabled]="inputDisabled" name="city" type="radio" value=0 [(ngModel)]="details.REG_CITY_NOT_LIVE_CITY" />
+          <input [disabled]="inputDisabled" name="city" type="radio" value=0
+            [(ngModel)]="details.REG_CITY_NOT_LIVE_CITY" />
           <span>False</span>
         </label>
       </div>
