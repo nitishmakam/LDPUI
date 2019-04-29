@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MatExpansionPanel } from '@angular/material';
+import { MatExpansionPanel, MatSnackBar } from '@angular/material';
 import { Details } from '../prediction/prediction.component';
 import { ProfileService } from '../profile.service';
+import { SnackbarComponent } from '../snackbar/snackbar.component';
 
 @Component({
   selector: 'app-profile',
@@ -15,7 +16,7 @@ export class ProfileComponent implements OnInit {
   private email: string;
   private details: Details[];
 
-  constructor(private router: Router, private profileService: ProfileService) {
+  constructor(private router: Router, private profileService: ProfileService, public snackBar: MatSnackBar) {
     this.details = [];
   }
 
@@ -34,6 +35,12 @@ export class ProfileComponent implements OnInit {
     this.profileService.delete(id).subscribe(
       x => {
         this.details.splice(index, 1);
+        this.snackBar.openFromComponent(SnackbarComponent, {
+          duration: 3000,
+          data: 'Successfully deleted',
+          horizontalPosition: 'center',
+          verticalPosition: 'bottom'
+        });
       }
     );
   }

@@ -11,7 +11,7 @@ export class Details {
   EXT_SOURCE_1: number;
   EXT_SOURCE_2: number;
   EXT_SOURCE_3: number;
-  DAYS_BIRTH: Date;
+  DAYS_BIRTH: number;
   DAYS_EMPLOYED: number;
   AMT_ANNUITY: number;
   AMT_CREDIT: number;

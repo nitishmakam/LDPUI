@@ -14,7 +14,7 @@
       </div>
       <div class="input-field col s4">
         <label [ngClass]="{'active': inputDisabled==true}"
-          matTooltip="Normalized score from externald data source">EXTERNAL SOURCE 2</label>
+          matTooltip="Normalized score from external data source">EXTERNAL SOURCE 2</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.EXT_SOURCE_2" />
       </div>
       <div class="input-field col s4">
@@ -22,9 +22,14 @@
           matTooltip="Normalized score from externald data source">EXTERNAL SOURCE 3</label>
         <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.EXT_SOURCE_3" />
       </div>
-      <div class="input-field col s4">
+      <!-- <div class="input-field col s4">
         <label [ngClass]="{'active': inputDisabled==true}">DATE OF BIRTH OF CLIENT</label>
         <input placeholder="" [disabled]="inputDisabled" type="date" [max]="today" [(ngModel)]="details.DAYS_BIRTH" />
+      </div> -->
+      <div class="input-field col s4">
+        <label [ngClass]="{'active' : inputDisabled==true}"
+        matTooltip="Client's age in days at the time of application">CLIENT'S AGE IN DAYS</label>
+        <input [disabled]="inputDisabled" type="number" [(ngModel)]="details.DAYS_BIRTH" />
       </div>
       <div class="input-field col s4">
         <label [ngClass]="{'active': inputDisabled==true}"
