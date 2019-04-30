@@ -55,6 +55,8 @@ export class Results {
   p0: number;
   p1: number;
   p2: number;
+  p3: number;
+  p4: number;
   prediction: number;
 }
 @Component({
@@ -71,7 +73,7 @@ export class PredictionComponent implements OnInit {
   @Input() showSave = true;
   @Input() showPredict = true;
   @Input() showResult = false;
-  private dialogOpened: boolean;
+  dialogOpened: boolean;
   today: string;
   jstoday = '';
 
@@ -98,6 +100,8 @@ export class PredictionComponent implements OnInit {
       this.details.results.p0 = x['p0'];
       this.details.results.p1 = x['p1'];
       this.details.results.p2 = x['p2'];
+      this.details.results.p3 = x['p3'];
+      this.details.results.p4 = x['p4'];
       this.details.results.prediction = x['prediction'];
       this.showResult = true;
     },
