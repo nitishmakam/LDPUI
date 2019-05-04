@@ -12,9 +12,9 @@ import { SnackbarComponent } from '../snackbar/snackbar.component';
 })
 export class ProfileComponent implements OnInit {
 
-  private username: string;
-  private email: string;
-  private details: Details[];
+  username: string;
+  email: string;
+  details: Details[];
 
   constructor(private router: Router, private profileService: ProfileService, public snackBar: MatSnackBar) {
     this.details = [];

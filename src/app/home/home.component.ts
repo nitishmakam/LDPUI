@@ -14,9 +14,9 @@ declare let endpoint: any;
 })
 export class HomeComponent implements OnInit {
 
-  private username: string;
-  private email: string;
-  private endpoint: string;
+  username: string;
+  email: string;
+  endpoint: string;
 
   constructor(private router: Router) {
     this.username = localStorage.getItem('username');

@@ -8,7 +8,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 })
 export class ModalComponent implements OnInit {
 
-  private text: string;
+  text: string;
   constructor(public dialogRef: MatDialogRef<ModalComponent>, @Inject(MAT_DIALOG_DATA) text: any) {
     this.text = text;
     console.log(this.text);

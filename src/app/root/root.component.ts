@@ -20,7 +20,7 @@ export interface SignUpCredentials {
 })
 export class RootComponent implements OnInit {
 
-  private sign: boolean;
+  sign: boolean;
   private usernameValid: boolean;
   private usernameValidShow: boolean;
   private signin: SignInCredentials;
